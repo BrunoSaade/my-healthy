@@ -1,0 +1,36 @@
+body {
+    background-color: #829896 !important;
+}
+.section-main {
+    background-image: url(../assets/imgs/vaccine_background.jpeg);
+    background-size: 100%;
+    display: flex;
+    height: calc(100vh - 90px);
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-main--content {
+    text-align: center;
+    max-width: 570px;
+}
+
+.section-main--content-title {
+    color: #419ED7;
+    font-size: 48px;
+}
+
+.section-main--content-button {
+    padding: 10px;
+    background-color: #419ED7;
+    color: white;
+    font-size: 24px;
+    border: none;
+    margin-top: 84px;
+    cursor: pointer;
+}
+
+.section-main--content-button:hover {
+    background-color: #6ea9ce;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Averia+Libre:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/register.css">
+  <link rel="stylesheet" href="../styles/main.css">
+  <script type="module" src="../service/register.js"></script>
+</head>
+<body>
+  <header class="header header--bkg-default">  
+    <div class="header--logo-section" onclick="window.location.href = '/'">
+      <img class="header--logo" src="../assets/imgs/icon_vaccine.svg" alt="">
+      <p class="header--logo-text">MyHealth</p>
+    </div>
+  </header>
+  <div class="section-main">
+    <div class="section-main--content">
+      <form id="registerForm">
+        <div class="section-main--input-row">
+          <label for="name">Nome completo</label>
+          <input class="section-main--input" name="name" id="name" placeholder="Nome completo">
+        </div>
+        <div class="section-main--input-row section-main--input-gender-ls">
+          <label>Sexo</label>
+          <input class="section-main--input-radio" type="radio" name="gender" value="male" checked />
+          <label for="gender">Masculino</label>
+          <input class="section-main--input-radio" type="radio" name="gender" value="female"/>
+          <label for="gender">Feminino</label>
+        </div>
+        <div class="section-main--input-row section-main--input-date-ls">
+          <label for="date">Data de nascimento</label>
+          <input name="date" id="date" type="date">
+        </div>
+        <div class="section-main--input-row">
+          <label for="email">E-mail</label>
+          <input class="section-main--input" name="email" id="email" placeholder="E-mail">
+        </div>
+        <div class="section-main--input-row">
+          <label for="password">Senha</label>
+          <input class="section-main--input" name="password" id="password" type="password" placeholder="*******">
+        </div>
+        <div class="section-main--input-row">
+          <label for="confirmPassword">Repetir senha</label>
+          <input class="section-main--input" name="confirmPassword" id="confirmPassword" type="password" placeholder="*******">
+        </div>
+        <div id="errorMsg" class="section-main--password-error">
+          <p>Senha não confere!</p>
+        </div>
+      </form>
+      <button id="registerBtn" class="section-main--button btn-secondary">Cadastrar</button>
+    </div>
+  </div>
+</body>
+</html>

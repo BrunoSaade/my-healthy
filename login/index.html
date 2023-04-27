@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Averia+Libre:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/login.css">
+  <link rel="stylesheet" href="../styles/main.css">
+  <script type="module" src="../service/login.js"></script>
+</head>
+<body>
+  <header class="header header--bkg-default">  
+    <div class="header--logo-section" onclick="window.location.href = '/'">
+      <img class="header--logo" src="../assets/imgs/icon_vaccine.svg" alt="">
+      <p class="header--logo-text">MyHealth</p>
+    </div>
+  </header>
+  <div class="section-main">
+    <div class="section-main--content">
+      <form>
+        <div class="section-main--input-row">
+          <label for="name">E-mail</label>
+          <input class="section-main--input" name="email" id="email" placeholder="E-mail">
+        </div>
+        <div class="section-main--input-row">
+          <label for="name">Senha</label>
+          <input class="section-main--input" name="password" id="password" placeholder="*******" type="password">
+        </div>
+        <div id="errorMsg" class="section-main--error">
+          <p>E-mail e/ou senha inválidos</p>
+        </div>
+        <button type="button" id="loginButton" class="section-main--button btn-secondary">Entrar</button>
+      </form>
+      <p class="section-main--link" onclick="window.location.href = '/forgot'">Esqueci minha senha</p>
+    </div>
+  </div>
+</body>
+</html>

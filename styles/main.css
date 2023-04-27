@@ -1,0 +1,111 @@
+body {
+  background-color: #ADD4D0;
+}
+
+* {
+    font-family: 'Averia Libre', cursive;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+  }
+
+.header {
+  max-height: 87px;
+  display: flex;
+  padding: 17px;
+  justify-content: space-between;
+}
+
+.header--logo-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.header--logo {
+  width: 51px;
+}
+
+.header--logo-text {
+  font-size: 48px;
+  color: #419ED7;
+}
+
+.header--bkg-index {
+  background-color: #8FE1D9;
+}
+
+.header--bkg-default {
+  background-color: #C1E7E3;
+}
+
+.header--button {
+  padding: 10px;
+  background-color: #419ED7;
+  color: white;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+}
+
+.header--button:hover {
+  background-color: #6ea9ce;
+}
+
+.header--section-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.btn-secondary {
+  padding: 10px;
+  background-color: #37BD6D;
+  color: white;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+  width: 188px;
+}
+
+.btn-secondary:hover {
+  background-color: #4cd884;
+}
+
+.btn-primary {
+  padding: 10px;
+  background-color: #419ED7;
+  color: white;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #6ea9ce;
+}
+
+.btn-delete {
+  padding: 10px;
+  background-color: #FF8383;
+  color: white;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  background-color: #ff9797;
+}
+
+.section-main--error {
+  color: #FD7979;
+  margin-top: 20px;
+  font-size: 20px;
+  display: none;
+}
+
+.section-main--card-img {
+  max-width: 80%;
+  max-height: 50%;
+}

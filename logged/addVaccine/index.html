@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add vaccine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Averia+Libre:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles/addVaccine.css">
+  <link rel="stylesheet" href="../../styles/main.css">
+  <script type="module" src="../../service/index.js"></script>
+  <script type="module" src="../../service/addVaccine.js"></script>
+</head>
+<body>
+  <header class="header header--bkg-default">  
+    <div class="header--logo-section" onclick="window.location.href = '/logged/main'">
+      <img class="header--logo" src="../../assets/imgs/icon_vaccine.svg" alt="">
+      <p class="header--logo-text">MyHealth</p>
+    </div>
+    <div class="header--section-buttons">
+      <button class="header--button" onclick="window.location.href = '/logged/main'">Minhas vacinas</button>
+      <button id="logoutBtn" class="header--button">Logout</button>
+    </div>
+  </header>
+  <div class="section-main">
+    <div class="section-main--content">
+      <form id="registerForm">
+        <div class="section-main--input-row">
+          <label for="vaccinationDate">Data de vacinaçāo</label>
+          <input name="vaccinationDate" id="vaccinationDate" type="date">
+        </div>
+        <div class="section-main--input-row section-main--input-dose">
+          <label for="name">Vacina</label>
+          <input class="section-main--input" name="name" id="name" placeholder="Nome da vacina">
+        </div>
+        <div class="section-main--input-row section-main--input-dose-ls">
+          <label>Dose</label>
+          <input class="section-main--input-radio" type="radio" name="dose" value="firtsDose" checked />
+          <label for="dose">1a. dose</label>
+          <input class="section-main--input-radio" type="radio" name="dose" value="secondDose"/>
+          <label for="dose">2a. dose</label>
+          <input class="section-main--input-radio" type="radio" name="dose" value="thirdDose"/>
+          <label for="dose">3a. dose</label>
+          <input class="section-main--input-radio" type="radio" name="dose" value="reinforcement"/>
+          <label for="dose">Reforço</label>
+          <input class="section-main--input-radio" type="radio" name="dose" value="onceDose"/>
+          <label for="dose">Dose única</label>
+        </div>
+        <div class="section-main--input-row section-main--input-file-row">
+          <label for="vaccinateImg">Comprovante de vacina</label>
+          <input class="section-main--input-file" name="vaccinateImg" type="file" id="vaccinateImg" placeholder="Selecionar imagem...">
+          <button id="selectImgBtn" class="section-main--button btn-primary" type="button">Selecionar imagem...</button>
+        </div>
+        <div id="imgChoosed" class="section-main--input-row section-main--img-choosed"></div>
+        <div class="section-main--input-row section-main--input-date-ls">
+          <label for="nextVaccinationDate">Próxima vacinaçāo</label>
+          <input name="nextVaccinationDate" id="nextVaccinationDate" type="date">
+        </div>
+      </form>
+      <button id="registerBtn" class="section-main--button btn-secondary">Cadastrar</button>
+    </div>
+  </div>
+</body>
+</html>

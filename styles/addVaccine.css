@@ -1,0 +1,83 @@
+.section-main {
+  display: flex;
+  justify-content: center;
+}
+  
+.section-main--content {
+  display: block;
+  max-width: 1100px;
+  margin-top: 140px;
+  text-align: center;
+}
+
+
+label {
+  color: white;
+  font-size: 32px;
+}
+
+input {
+  outline: none;
+  border: none;
+  color: #3F92C5;
+  font-size: 24px;
+  padding-left: 6px;
+  margin-left: 5px;
+  width: 250px;
+  height: 35px;
+}
+
+::placeholder {
+  color: rgb(159, 159, 159);
+}
+
+input[type="date"] {
+  height: 35px;
+}
+
+.section-main--input-radio {
+  width: 25px;
+  height: 25px;
+  border: 3px solid #FFFFFF;
+}
+
+.section-main--input-row {
+  margin-top: 6px;
+  text-align: start;
+}
+
+.section-main--input-dose-ls {
+  margin: 20px 0 20px 185px;
+}
+
+.section-main--input-file {
+  display: none;
+}
+
+.section-main--input-dose {
+  margin-left: 161px;
+}
+
+.section-main--input-file-row {
+  margin-left: -69px;
+}
+
+.section-main--input-date-ls {
+  margin-left: -8px;
+}
+
+.section-main--button.btn-secondary {
+  margin-top: 70px;
+}
+
+.section-main--button.btn-primary {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.section-main--img-choosed {
+  max-width: 50%;
+  margin: 8px 0;
+  text-align: end;
+  margin-right: 30px;
+}
