@@ -22,6 +22,9 @@ document.getElementById('cancelBtn').addEventListener('click', handleMustShowMod
 document.getElementById('selectImgBtn').addEventListener('click', handleButtonFileClicked)
 document.getElementById('vaccinateImg').addEventListener('change', handleFileChoosed)
 document.getElementById('saveBtn').addEventListener('click', handleSaveVaccine)
+
+document.getElementById('confirmBtn').addEventListener('click', handleDeleteVaccine)
+
 form.addEventListener('click', handleDisableInput)
 
 auth.onAuthStateChanged((user) => {
@@ -30,6 +33,55 @@ auth.onAuthStateChanged((user) => {
     getVaccineData(vaccineId)
   } 
 })
+
+function updateVaccine() {
+  const uid = auth.currentUser.uid
+  const vaccineId = getVaccineId()
+  const vaccineData = {
+    vaccinationDate: form.vaccinationDate.value,
+    name: form.name.value,
+    dose: elements.dose(),
+    nextVaccinationDate: form.nextVaccinationDate.value,
+  }
+
+  if(currentFile) {
+    vaccineData.vaccinationImg = sourceImg
+  }
+
+  updateDoc(doc(db, "users/" + uid + "/vaccines", vaccineId), vaccineData)
+  .then((response) => {
+    window.location.href = "/logged/main/"
+  })
+  .catch((error) => {
+    console.log(error)
+  })
+}
+
+function handleDeleteVaccine() {
+  let uid = auth.currentUser.uid
+  deleteVaccineImg(uid)
+}
+
+function deleteVaccineImg(uid) {
+  deleteObject(ref(storage, sourceImg))
+  .then((response) => {
+    deleteVaccine(uid)
+  })
+  .catch((error) => {
+    console.log(error)
+  })
+}
+
+function deleteVaccine(uid) {
+  const vaccineId = getVaccineId()
+  deleteDoc(doc(db, "users/" + uid + "/vaccines/" + vaccineId))
+  .then((response) => {
+    window.location.href = "/logged/main/"
+  })
+  .catch((error) => {
+    console.log(error)
+  })
+}
 
 function getVaccineData(vaccineId) {
     const uid = auth.currentUser.uid
@@ -41,11 +93,21 @@ function getVaccineData(vaccineId) {
       sourceImg = response.data().vaccinationImg,
       form.nextVaccinationDate.value = response.data().nextVaccinationDate
       if(response.data().dose === 'onceDose') { handleDisableInput() }
+      renderImgOnScreen(sourceImg)
     })
     .catch((error) => {
       console.log(error)
     })
 
+}
+
+function renderImgOnScreen(srcImg) {
+  const choosedImgDiv = document.querySelector("#imgChoosed")
+  const img = document.createElement('img');
+  img.src = srcImg;
+  choosedImgDiv.innerHTML = ''
+  img.classList.add('section-main--img-choosed')
+  choosedImgDiv.appendChild(img)
 }
 
 function handleDisableInput() {
@@ -87,29 +149,6 @@ function uploadImage() {
   })
 }
 
-function updateVaccine() {
-  const uid = auth.currentUser.uid
-  const vaccineId = getVaccineId()
-  const vaccineData = {
-    vaccinationDate: form.vaccinationDate.value,
-    name: form.name.value,
-    dose: elements.dose(),
-    nextVaccinationDate: form.nextVaccinationDate.value,
-  }
-
-  if(currentFile) {
-    vaccineData.vaccinationImg = sourceImg
-  }
-
-  updateDoc(doc(db, "users/" + uid + "/vaccines", vaccineId), vaccineData)
-  .then((response) => {
-    window.location.href = "/logged/main/"
-  })
-  .catch((error) => {
-    console.log(error)
-  })
-}
-
 function handleMustShowModal() {
   const modalBkg = document.querySelector("#deleteVaccineModalBkg")
   const modal = document.querySelector("#deleteVaccineModal")
@@ -143,12 +182,7 @@ function handleFileChoosed(event) {
     reader.addEventListener('load', function(e) {
       const readerTarget = e.target;
 
-      const img = document.createElement('img');
-      img.src = readerTarget.result;
-      img.classList.add('section-main--img-choosed')
-      choosedImgDiv.innerHTML = ''
-      
-      choosedImgDiv.appendChild(img)
+      renderImgOnScreen(readerTarget.result)
     })
 
     reader.readAsDataURL(currentFile)

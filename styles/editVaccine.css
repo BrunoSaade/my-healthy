@@ -1,6 +1,7 @@
 .section-main {
   display: flex;
   justify-content: center;
+  padding-bottom: 50px;
 }
   
 .section-main--content {

@@ -101,17 +101,20 @@ function handleFileChoosed(event) {
 
     reader.addEventListener('load', function(e) {
       const readerTarget = e.target;
-
-      const img = document.createElement('img');
-      img.src = readerTarget.result;
-      img.classList.add('section-main--img-choosed')
-      choosedImgDiv.innerHTML = ''
-      
-      choosedImgDiv.appendChild(img)
+      renderImgOnScreen(readerTarget.result)
     })
 
     reader.readAsDataURL(currentFile)
   } else {
     choosedImgDiv.innerHTML = ''
   }
+}
+
+function renderImgOnScreen(srcImg) {
+  const choosedImgDiv = document.querySelector("#imgChoosed")
+  const img = document.createElement('img');
+  img.src = srcImg;
+  choosedImgDiv.innerHTML = ''
+  img.classList.add('section-main--img-choosed')
+  choosedImgDiv.appendChild(img)
 }
