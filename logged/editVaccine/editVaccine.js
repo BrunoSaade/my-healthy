@@ -1,5 +1,5 @@
-import { app, auth } from './firebase/firebase.js'
-import { db, storage } from './firebase/firebase.js'
+import { app, auth } from '../../service/firebase/firebase.js'
+import { db, storage } from '../../service/firebase/firebase.js'
 import { signOut} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js"
 import {  getDoc, doc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js"
 import { uploadBytes, ref, deleteObject } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-storage.js"

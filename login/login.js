@@ -1,4 +1,4 @@
-import { app, auth } from "./firebase/firebase.js";
+import { app, auth } from "../service/firebase/firebase.js";
 import {signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js"
 
 document.getElementById('loginButton').addEventListener('click', handleLogin)

@@ -1,6 +1,6 @@
-import { auth } from "./firebase/firebase.js";
+import { auth } from "../service/firebase/firebase.js";
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js"
-import { db } from './firebase/firebase.js'
+import { db } from '../service/firebase/firebase.js'
 import { setDoc, doc, } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js"
 
 const form = document.getElementById('registerForm')

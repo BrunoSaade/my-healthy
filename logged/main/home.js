@@ -1,8 +1,8 @@
 
-import { auth } from './firebase/firebase.js'
+import { auth } from '../../service/firebase/firebase.js'
 import {query, collection, onSnapshot} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js"
-import { db } from './firebase/firebase.js'
-import { formatDoseName, formatDateEnToBr } from './mixins/mixins.js'
+import { db } from '../../service/firebase/firebase.js'
+import { formatDoseName, formatDateEnToBr } from '../../service/mixins/mixins.js'
 
 document.getElementById('addVaccineBtn').addEventListener('click', handleAddVaccine)
 

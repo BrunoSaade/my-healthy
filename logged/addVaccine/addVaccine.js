@@ -1,5 +1,5 @@
-import { auth } from './firebase/firebase.js'
-import { db, storage } from './firebase/firebase.js'
+import { auth } from '../../service/firebase/firebase.js'
+import { db, storage } from '../../service/firebase/firebase.js'
 import { addDoc, collection } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js"
 import { uploadBytes, ref, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-storage.js";
 
