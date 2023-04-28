@@ -16,6 +16,11 @@ function handleAddVaccine() {
   window.location.href = "/logged/addVaccine/"
 }
 
+document.getElementById("search").addEventListener('input', () => {
+  const searchString = document.getElementById("search").value.trim()
+  fillCard(vaccines.filter(vaccine => vaccine.title.toUpperCase().includes(searchString.toUpperCase())))
+})
+
 function getVaccines() {
   let uid = auth.currentUser.uid
   const queryVaccines = query(collection(db, "users/" + uid + "/vaccines" ))
